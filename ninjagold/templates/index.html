@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Trick or Treat!</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Let's go Trick or Treating!</h1>
+            <h3>Your treats: {{treats}}</h3>
+            <div id="main">
+                <div class="tile">
+                    <h2>Under the Couch Cushions</h2>
+                    <h5>(earns 0-2 treats)</h5>
+                    <form action="/process_money" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="location" value="couch" />
+                        <button type="submit">Trick or Treat here</button>
+                    </form>
+                </div>
+                <div class="tile">
+                    <h2>Forest</h2>
+                    <h5>(earns 5-10 treats)</h5>
+                    <form action="/process_money" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="location" value="forest" />
+                        <button type="submit">Trick or Treat here</button>
+                    </form>
+                </div>
+                <div class="tile">
+                    <h2>Witch's House</h2>
+                    <h5>(earns -50-100 treats)</h5>
+                    <form action="/process_money" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="location" value="witch" />
+                        <button type="submit">Trick or Treat here</button>
+                    </form>
+                </div>
+                <div class="tile">
+                    <h2>Rich Neighborhood</h2>
+                    <h5>
+                        (earns 30-50 treats) <br />
+                        (the good kind)
+                    </h5>
+
+                    <form action="/process_money" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="location" value="rich" />
+                        <button type="submit">Trick or Treat here</button>
+                    </form>
+                </div>
+            </div>
+            <div id="activities">
+                <h4>Actions:</h4>
+                <div id="console">
+                    <p>{{console|linebreaks}}</p>
+                </div>
+            </div>
+            <a href="/reset">Click to reset</a>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

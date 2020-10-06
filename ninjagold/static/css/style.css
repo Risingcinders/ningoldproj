@@ -1,0 +1,91 @@
+:root {
+    --primarytext: #e67025;
+    --secondarytext: rgb(94, 50, 0);
+    --primarybackground: #4b4b4b;
+    --secbackground: #993b00;
+}
+
+* {
+    /* outline: 1px dotted red; */
+    margin: 0px;
+    padding: 0px;
+    color: var(--primarytext);
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url("../img/background.jpg");
+    background-size: 2000px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-color: var(--secbackground);
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    outline: solid 5px var(--primarybackground);
+    margin: 20px;
+    padding: 10px;
+    background-color: var(--primarybackground);
+}
+
+#wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+    margin: auto;
+}
+
+#wrapper h3 {
+    align-self: flex-start;
+}
+
+#main {
+    justify-content: space-between;
+    /* padding: 0px;
+    margin: 0px; */
+}
+
+.tile {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secbackground);
+    height: 200px;
+    min-width: 150px;
+}
+
+.tile h2 {
+    font-size: 1.3em;
+}
+
+#activities {
+    flex-direction: column;
+    background-color: var(--secbackground);
+}
+
+#console {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 900px;
+    height: 250px;
+    overflow-y: auto;
+    background-color: var(--secondarytext);
+}
+#console p {
+    color: var(--primarytext);
+}
+
+button {
+    background-color: var(--primarybackground);
+}
+
+h2 {
+    text-align: center;
+}
+
+h5 {
+    text-align: center;
+}
